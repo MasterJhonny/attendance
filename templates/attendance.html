@@ -1,0 +1,30 @@
+{% extends 'base.html' %} {% block content %}
+<div class="container_header">
+  <h3 class="title is-4">Panel de Asistencia</h3>
+  <button class="button" onclick="registerAttendance()">
+    Registrar Asistencia
+  </button>
+</div>
+<div class="container_table">
+  <table class="table">
+    <thead>
+      <tr>
+        <th><abbr title="Position">Nro.</abbr></th>
+        <th>Nombre</th>
+        <th><abbr title="Played">Asistencia Hoy</abbr></th>
+        <th>Fecha y hora de Ingreso</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for user in users %}
+      <tr>
+        <th>{{ user['num'] }}</th>
+        <td><strong>{{ user['username'] }}</strong></td>
+        <td>No</td>
+        <td>00:00 05/11/24</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+{% endblock %}

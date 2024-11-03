@@ -1,0 +1,89 @@
+{% extends 'base.html' %} {% block content %}
+<div class="container_header">
+  <h3 class="title is-4">Panel de Usuarios</h3>
+  <button class="button" onclick="openModal()">Crear Nuevo Usuario</button>
+</div>
+<div class="modal" id="modal">
+  <div class="modal-background"></div>
+  <div class="modal-content">
+    <!-- Any other Bulma elements you want -->
+    <h4 class="title is-5">Registro de Usuarios</h4>
+    <form id="userForm" action="" method="post">
+      <div class="field">
+        <label class="label" for="name">Nombre:</label>
+        <div class="control">
+          <input
+            class="input"
+            type="text"
+            name="name"
+            placeholder="Text input"
+            required
+          />
+        </div>
+      </div>
+      <div class="field">
+        <label class="label" for="grade">Curso:</label>
+        <div class="control">
+          <div class="select">
+            <select name="grade">
+              <option>1ro. de Secundaria</option>
+              <option>2do. de Secundaria</option>
+              <option>3ro. de Secundaria</option>
+              <option>4to. de Secundaria</option>
+              <option>5to. Secundaria</option>
+              <option>6to. Secundaria</option>
+            </select>
+          </div>
+        </div>
+      </div>
+      <input class="button is-link" type="submit" value="Submit input" />
+    </form>
+  </div>
+  <button
+    class="modal-close is-large"
+    aria-label="close"
+    onclick="closeModal()"
+  ></button>
+</div>
+<div class="container_table">
+  <table class="table">
+    <thead>
+      <tr>
+        <th><abbr title="Position">Nro.</abbr></th>
+        <th>Nombre</th>
+        <th><abbr title="Played">Grado</abbr></th>
+        <th>Fecha de Registro</th>
+        <th>Huella Registrada</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for user in users %}
+      <tr>
+        <th>{{ user['num'] }}</th>
+        <td>{{ user['username'] }}</td>
+        <td>{{ user['grade'] }}</td>
+        <td>{{ user['created_at'] }}</td>
+        <td>
+          <figure class="image is-24x24">
+            {% if user['fingerprint'] %}
+            <img src="https://www.svgrepo.com/show/313115/check.svg" />
+            {% else %}
+            <div
+              id="{{ user['id'] }}"
+              class="btn-icon"
+              onclick="registerFingerprint(this.id)"
+            >
+              <img
+                src="https://www.svgrepo.com/show/526906/check-circle.svg"
+                onclick=""
+              />
+            </div>
+            {% endif %}
+          </figure>
+        </td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+{% endblock %}

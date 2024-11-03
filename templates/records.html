@@ -1,0 +1,64 @@
+{% extends 'base.html' %} {% block content %}
+<div class="container_header">
+  <h3 class="title is-4">Registros Anteriores</h3>
+  <button class="button" onclick="">Asistencias</button>
+</div>
+<div class="container_table">
+  <table class="table">
+    <thead>
+      <tr>
+        <th><abbr title="Position">Nro.</abbr></th>
+        <th>Nombre</th>
+        <th><abbr title="Played">Lunes</abbr></th>
+        <th><abbr title="Won">Martes</abbr></th>
+        <th><abbr title="Drawn">Miercoles</abbr></th>
+        <th><abbr title="Lost">Jueves</abbr></th>
+        <th><abbr title="Goals for">Jueves</abbr></th>
+        <th><abbr title="Goals against">Viernes</abbr></th>
+        <th><abbr title="Goal difference">Sabado</abbr></th>
+        <th>Promedio de Asistencia</th>
+      </tr>
+    </thead>
+    <tfoot>
+      <tr>
+        <th><abbr title="Position">Nro.</abbr></th>
+        <th>Nombre</th>
+        <th><abbr title="Played">Lunes</abbr></th>
+        <th><abbr title="Won">Martes</abbr></th>
+        <th><abbr title="Drawn">Miercoles</abbr></th>
+        <th><abbr title="Lost">Jueves</abbr></th>
+        <th><abbr title="Goals for">Jueves</abbr></th>
+        <th><abbr title="Goals against">Viernes</abbr></th>
+        <th><abbr title="Goal difference">Sabado</abbr></th>
+        <th>Promedio de Asistencia</th>
+      </tr>
+    </tfoot>
+    <tbody>
+      <tr>
+        <th>1</th>
+        <td><strong>Juanes</strong></td>
+        <td>Si</td>
+        <td>Si</td>
+        <td>No</td>
+        <td>No</td>
+        <td>Si</td>
+        <td>Si</td>
+        <td>Si</td>
+        <td>10/10</td>
+      </tr>
+      <tr>
+        <th>2</th>
+        <td><strong>Juanes</strong></td>
+        <td>Si</td>
+        <td>Si</td>
+        <td>No</td>
+        <td>No</td>
+        <td>Si</td>
+        <td>Si</td>
+        <td>Si</td>
+        <td>10/10</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+{% endblock %}

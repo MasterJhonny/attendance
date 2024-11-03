@@ -1,0 +1,27 @@
+{% extends 'base.html' %} {% block content %}
+<div class="container_home">
+  <div class="container_home background-image">
+    <h3 class="title is-3 name_college" id="name-college">
+      COLEGIO PARTICULAR LUZ A LAS NACIONES
+    </h3>
+    <h4 class="title is-3 name_system">Sistena de Registro de Asistencia</h4>
+    <br>
+    <figure class="image is-128x128">
+      <img class="img" src="https://i.postimg.cc/9FPq1m8R/paloma-animada.gif" />
+    </figure>
+  </div>
+  <br>
+  <p>¡Bienvenido/a a nuestra plataforma de registro de asistencia!</p>
+  <br>
+  <div>
+    <blockquote>
+      Estamos encantados de que te unas a nuestra comunidad educativa. Esta
+      plataforma ha sido diseñada para facilitar y agilizar el proceso de registro
+      de asistencia, permitiendo a padres, estudiantes y personal docente
+      mantenerse informados y organizados.
+    </<blockquote>
+  </div>
+  <br>
+  <a class="button is-link" href="{{ url_for('users') }}">Comenzar</a>
+</div>
+{% endblock %}
