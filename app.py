@@ -48,11 +48,13 @@ def users():
         cur.close()
         conn.close()
 
-        for index, elemento in enumerate(users):
+        users_order = sorted(users, key=lambda x: x['id'])
+
+        for index, elemento in enumerate(users_order):
             elemento['num'] = index + 1
 
         print('render users ====>', users)
-        return render_template('users.html', users=users)
+        return render_template('users.html', users=users_order)
 
 
 @app.get('/register/fingerprint/<id>')
