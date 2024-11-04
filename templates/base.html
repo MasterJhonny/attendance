@@ -38,7 +38,6 @@
         <a
           role="button"
           id="btnBurger"
-          onclick="toggleMenu()"
           class="navbar-burger"
           aria-label="menu"
           aria-expanded="false"
@@ -75,5 +74,6 @@
     </nav>
     <div>{% block content %}{% endblock %}</div>
     <script src="{{ url_for('static', filename = 'js/main.js') }}"></script>
+    {% block script %} {% endblock %}
   </body>
 </html>

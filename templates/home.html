@@ -24,3 +24,9 @@
   <a class="button is-link" href="{{ url_for('users') }}">Comenzar</a>
 </div>
 {% endblock %}
+{% block script %}
+  <script
+    type="module"
+    src="{{ url_for('static', filename = 'js/home.js') }}"
+  ></script>
+{% endblock %}

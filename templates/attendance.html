@@ -1,9 +1,7 @@
 {% extends 'base.html' %} {% block content %}
 <div class="container_header">
   <h3 class="title is-4">Panel de Asistencia</h3>
-  <button class="button" onclick="registerAttendance()">
-    Registrar Asistencia
-  </button>
+  <button class="button" id="btn-reg-att">Registrar Asistencia</button>
 </div>
 <div class="container_table">
   <table class="table">
@@ -27,4 +25,9 @@
     </tbody>
   </table>
 </div>
+{% endblock %} {% block script %}
+<script
+  type="module"
+  src="{{ url_for('static', filename = 'js/attendance.js') }}"
+></script>
 {% endblock %}

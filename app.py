@@ -91,6 +91,12 @@ def attendance():
     return render_template('attendance.html', users=users)
 
 
+@app.get('/attendance/register')
+def attendance_register():
+    rta = "valor"
+    return jsonify(rta)
+
+
 @app.route('/records')
 def records():
     return render_template('records.html')

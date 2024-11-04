@@ -1,7 +1,7 @@
 {% extends 'base.html' %} {% block content %}
 <div class="container_header">
   <h3 class="title is-4">Panel de Usuarios</h3>
-  <button class="button" onclick="openModal()">Crear Nuevo Usuario</button>
+  <button class="button" id="btn-open-modal">Crear Nuevo Usuario</button>
 </div>
 <div class="modal" id="modal">
   <div class="modal-background"></div>
@@ -36,13 +36,18 @@
           </div>
         </div>
       </div>
-      <input class="button is-link" type="submit" value="Submit input" />
+      <input
+        class="button is-link"
+        type="submit"
+        value="Enviar"
+        id="btn-submit"
+      />
     </form>
   </div>
   <button
     class="modal-close is-large"
     aria-label="close"
-    onclick="closeModal()"
+    id="btn-closed-modal"
   ></button>
 </div>
 <div class="container_table">
@@ -68,11 +73,7 @@
             {% if user['fingerprint'] %}
             <img src="https://www.svgrepo.com/show/313115/check.svg" />
             {% else %}
-            <div
-              id="{{ user['id'] }}"
-              class="btn-icon"
-              onclick="registerFingerprint(this.id)"
-            >
+            <div id="{{ user['id'] }}" class="btn-icon">
               <img
                 src="https://www.svgrepo.com/show/526906/check-circle.svg"
                 onclick=""
@@ -86,4 +87,9 @@
     </tbody>
   </table>
 </div>
+{% endblock %} {% block script %}
+<script
+  type="module"
+  src="{{ url_for('static', filename = 'js/users.js') }}"
+></script>
 {% endblock %}
